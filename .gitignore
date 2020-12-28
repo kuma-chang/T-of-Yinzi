@@ -1,8 +1,14 @@
 # dotenv environment variables file
 .env
 
-# virtual enviroments
+# config.py environment variables file
+config.py
+
+# virtual environments
 t-of-yinzi_backend_env
 
 # vim swp files
 *.swp
+
+# pycache for using pylint
+__pycache__
