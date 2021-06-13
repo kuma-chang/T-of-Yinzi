@@ -12,3 +12,6 @@ t-of-yinzi_backend_env
 
 # pycache for using pylint
 __pycache__
+
+#build directory
+build
