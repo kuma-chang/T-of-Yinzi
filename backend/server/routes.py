@@ -5,7 +5,7 @@ import os
 
 load_dotenv()
 
-ATLAS_URI = os.getenv("ATLAS_URI")
+ATLAS_URI = os.environ.get("ATLAS_URI")
 
 
 router = APIRouter()
