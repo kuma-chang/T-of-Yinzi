@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
+from .routes import router as UsersRouter
 #import routes 
 
 
@@ -19,12 +20,11 @@ app = FastAPI()
 async def root():
         return {"message": "Hello World"}
 
+app.include_router(UsersRouter, prefix="/users")
+
+
 """
 
-@app.get("/users")
-async def get_all_users():
-    all_users = routes.get_all_users()
-    return all_users
 
 
 @app.post("/users/{user_name}")
