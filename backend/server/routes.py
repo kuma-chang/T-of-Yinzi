@@ -3,8 +3,8 @@ import motor.motor_asyncio
 from dotenv import load_dotenv
 import os
 
-'''
 load_dotenv()
+'''
 ATLAS_URI = os.environ.get("ATLAS_URI")
 '''
 
