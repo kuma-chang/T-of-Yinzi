@@ -1,31 +1,4 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Optional
-import server 
+import uvicorn
 
-
-# Define models
-class User(BaseModel):
-    _id: int
-    name: str
-    description: Optional[str] = None
-
-
-
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-        return {"message": "Hello World"}
-
-@app.get("/users")
-async def get_all_users():
-    all_users = server.get_all_users()
-    return all_users
-
-
-@app.post("/users/{user_name}")
-async def add_user(user_name):
-    server.add_user(user_name)
-    return{}
+if __name__ == "__main__":
+  uvicorn.run("server.api:app", host="0.0.0.0", port=8000, reload=True)
