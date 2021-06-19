@@ -3,17 +3,18 @@ import motor.motor_asyncio
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
 '''
+load_dotenv()
 ATLAS_URI = os.environ.get("ATLAS_URI")
 '''
+ATLAS_URI = process.env.get("ATLAS_URI")
 
 
 router = APIRouter()
 
 
 
-client = motor.motor_asyncio.AsyncIOMotorClient(process.env.ATLAS_URI)
+client = motor.motor_asyncio.AsyncIOMotorClient(ATLAS_URI)
 db = client["t-of-yinzi"]
 collection = db["test"]
 
