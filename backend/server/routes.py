@@ -1,11 +1,15 @@
 from fastapi import APIRouter
 import motor.motor_asyncio
-from .config import ATLAS_URI
-#from .server import get_all_users
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
+
+ATLAS_URI = os.getenv("ATLAS_URI")
 
 
 router = APIRouter()
+
 
 
 client = motor.motor_asyncio.AsyncIOMotorClient(ATLAS_URI)
