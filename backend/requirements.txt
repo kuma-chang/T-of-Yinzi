@@ -6,6 +6,7 @@ h11==0.11.0
 isort==5.6.4
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
+motor==2.4.0
 pydantic==1.7.3
 pylint==2.6.0
 pymongo==3.11.2
