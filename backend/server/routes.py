@@ -2,6 +2,7 @@ from fastapi import APIRouter
 import motor.motor_asyncio
 from dotenv import load_dotenv
 import os
+from process.env import ATLAS_URI
 
 '''
 load_dotenv()
