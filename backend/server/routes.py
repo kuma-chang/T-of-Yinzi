@@ -21,4 +21,5 @@ collection = db["test"]
 @router.get("/")
 async def get_all_users() -> dict:
     all_users = await collection.find().to_list(1000)
-    return all_users
+    #return all_users
+    return {"message": ATLAS_URI}
