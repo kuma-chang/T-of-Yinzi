@@ -7,7 +7,7 @@ load_dotenv()
 """
 ATLAS_URI = os.environ.get("ATLAS_URI")
 """
-ATLAS_URI = os.environ.get("process.env.ATLAS_URI")
+ATLAS_URI = os.environ.get("env.ATLAS_URI")
 
 
 router = APIRouter()
@@ -22,4 +22,4 @@ collection = db["test"]
 async def get_all_users() -> dict:
     #all_users = await collection.find().to_list(1000)
     #return all_users
-    return {"message": ATLAS_URI}
+    return {"env.ATLAS_URI": ATLAS_URI}
