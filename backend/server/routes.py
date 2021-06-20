@@ -2,13 +2,12 @@ from fastapi import APIRouter
 import motor.motor_asyncio
 from dotenv import load_dotenv
 import os
-from .env import ATLAS_URI
 
-'''
 load_dotenv()
+"""
 ATLAS_URI = os.environ.get("ATLAS_URI")
-ATLAS_URI = process.env.ATLAS_URI
-'''
+"""
+ATLAS_URI = os.environ.get("process.env.ATLAS_URI")
 
 
 router = APIRouter()
