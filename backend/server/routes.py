@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-"""
 ATLAS_URI = os.environ.get("ATLAS_URI")
 """
 ATLAS_URI = os.environ.get("process.env.ATLAS_URI")
+"""
 
 
 router = APIRouter()
