@@ -20,6 +20,7 @@ collection = db["test"]
 
 @router.get("/")
 async def get_all_users() -> dict:
+    print(os.environ)
     #all_users = await collection.find().to_list(1000)
     #return all_users
-    return {"ATLAS_URI": process.env.ATLAS_URI}
+    return {"ATLAS_URI": ATLAS_URI}
