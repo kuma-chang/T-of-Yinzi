@@ -18,8 +18,13 @@ collection = db["test"]
 
 @router.get("/")
 async def get_all_users() -> dict:
-    print(os.environ)
     all_users = await collection.find().to_list(1000)
     return all_users
+'''
+
 loop = asyncio.get_event_loop()
-loop.run_until_complete(get_all_users())
+try:
+    loop.run_until_complete(get_all_users())
+finally:
+    loop.close()
+'''
