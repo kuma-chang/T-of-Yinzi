@@ -1,30 +1,16 @@
-from fastapi import APIRouter
-import motor.motor_asyncio
-from dotenv import load_dotenv
-import os
-
-load_dotenv()
-ATLAS_URI = os.environ.get('ATLAS_URI')
+from fastapi import APIRouter, Depends
+from .mongodb import AsyncIOMotorClient, get_database
 
 
 router = APIRouter()
 
 
 
-client = motor.motor_asyncio.AsyncIOMotorClient(ATLAS_URI)
-db = client["t-of-yinzi"]
-collection = db["test"]
-
 @router.get("/")
-async def get_all_users() -> dict:
-    all_users = await collection.find().to_list(1000)
+async def get_all_users(
+        db: AsyncIOMotorClient = Depends(get_database)
+        ) -> dict:
+    all_users = await db["t-of-yinzi"]["test"].find().to_list(1000)
     return all_users
 
-'''
-import asyncio
-loop = asyncio.get_event_loop()
-try:
-    loop.run_until_complete(get_all_users())
-finally:
-    loop.close()
-'''
+
