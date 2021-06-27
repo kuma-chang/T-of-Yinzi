@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 import motor.motor_asyncio
-import asyncio
+#import asyncio
 from dotenv import load_dotenv
 import os
 
@@ -20,8 +20,8 @@ collection = db["test"]
 async def get_all_users() -> dict:
     all_users = await collection.find().to_list(1000)
     return all_users
-'''
 
+'''
 loop = asyncio.get_event_loop()
 try:
     loop.run_until_complete(get_all_users())
