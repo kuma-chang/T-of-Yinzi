@@ -20,8 +20,8 @@ app = FastAPI()
 async def root():
         return {"message": "Hello World"}
 
-app.add_event_handler("startup", connect_to_mongo)
-app.add_event_handler("shutdown", close_mongo_connection)
+#app.add_event_handler("startup", connect_to_mongo)
+#app.add_event_handler("shutdown", close_mongo_connection)
 
 
 app.include_router(UsersRouter, prefix="/users")
