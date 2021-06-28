@@ -11,7 +11,7 @@ router = APIRouter()
 async def get_all_users(
         db: AsyncIOMotorClient = Depends(get_database)
         ) -> dict:
-    print(os.environ)
+    print(db)
     all_users = await db["t-of-yinzi"]["test"].find().to_list(1000)
     return all_users
 
