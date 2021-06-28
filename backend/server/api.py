@@ -2,7 +2,6 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
 from .routes import router as UsersRouter
-from .mongodb import connect_to_mongo, close_mongo_connection
 
 
 # Define models
@@ -19,9 +18,6 @@ app = FastAPI()
 @app.get("/")
 async def root():
         return {"message": "Hello World"}
-
-#app.add_event_handler("startup", connect_to_mongo)
-#app.add_event_handler("shutdown", close_mongo_connection)
 
 
 app.include_router(UsersRouter, prefix="/users")
