@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from typing import Optional
 from .routes import router as UsersRouter
 from .mongodb import connect_to_mongo, close_mongo_connection
-#import routes 
 
 
 # Define models

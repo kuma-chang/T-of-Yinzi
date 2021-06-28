@@ -1,6 +1,8 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 import os
+import logging
+
 
 load_dotenv()
 ATLAS_URI = os.environ.get('ATLAS_URI')
@@ -16,7 +18,11 @@ async def get_database() -> AsyncIOMotorClient:
 
 
 async def connect_to_mongo():
+    print("connecting to Mongo")
     db.client = AsyncIOMotorClient(ATLAS_URI)
+    print("connected to Mongo successfully!")
 
 async def close_mongo_connection():
+    print("closing Mongo connection")
     db.client.close()
+    print("closed Mongo connection successfully!")
