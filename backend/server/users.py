@@ -19,3 +19,10 @@ async def get_all_users() -> dict:
     return all_users
 
 
+@router.get("/count")
+async def get_all_users_count() -> dict:
+    db = AsyncIOMotorClient(ATLAS_URI)
+    users_count = await db["t-of-yinzi"]["test"].count_documents({})
+    db.close()
+    return users_count
+

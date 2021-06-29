@@ -1,14 +1,5 @@
 from fastapi import FastAPI
-from pydantic import BaseModel
-from typing import Optional
-from .routes import router as UsersRouter
-
-
-# Define models
-class User(BaseModel):
-    _id: int
-    name: str
-    description: Optional[str] = None
+from .users import router as UsersRouter
 
 
 
