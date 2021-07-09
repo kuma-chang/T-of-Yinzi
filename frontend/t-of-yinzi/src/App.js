@@ -3,7 +3,7 @@ import React from "react";
 import {Helmet} from "react-helmet";
 import MovingBackground from './UI/Background';
 import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
-import { Navigation, Home, Bio, Gallery, Media, Schedule } from "./components";
+import { Navigation, Footer, Home, Bio, Gallery, Media, Schedule } from "./components";
 
 
 
@@ -21,6 +21,7 @@ function App() {
                     <Route path="/media" exact component={() => <Media />} />
                     <Route path="/schedule" exact component={() => <Schedule />} />
                 </Switch>
+                <Footer />
             </Router>
             <Helmet>
                 <title>Yinzi Zhou| Home</title>
