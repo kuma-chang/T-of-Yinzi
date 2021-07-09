@@ -3,7 +3,7 @@ import React from "react";
 import {Helmet} from "react-helmet";
 import MovingBackground from './UI/Background';
 import { BrowserRouter as Router, Route, Switch  } from "react-router-dom";
-import { Navigation, Home, Bio } from "./components";
+import { Navigation, Home, Bio, Gallery, Media, Schedule } from "./components";
 
 
 
@@ -16,7 +16,10 @@ function App() {
                 <Navigation />
                 <Switch>
                     <Route path="/" exact component={() => <Home />} />
-                    <Route path="/Bio" exact component={() => <Bio />} />
+                    <Route path="/bio" exact component={() => <Bio />} />
+                    <Route path="/gallery" exact component={() => <Gallery />} />
+                    <Route path="/media" exact component={() => <Media />} />
+                    <Route path="/schedule" exact component={() => <Schedule />} />
                 </Switch>
             </Router>
             <Helmet>
