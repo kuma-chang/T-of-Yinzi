@@ -10,11 +10,12 @@ function MovingBackground() {
         <Particles
         style={{
             position: "fixed",
-                top: "0",
-                left: "0",
-                width: "100%",
-                height: "auto 100%",
-                opacity: "70%",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "auto 100%",
+            opacity: "70%",
+            zIndex: -1,
 
         }}
         id="tsparticles"
