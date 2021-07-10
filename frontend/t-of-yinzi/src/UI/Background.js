@@ -14,7 +14,7 @@ function MovingBackground() {
             left: "0",
             width: "100%",
             height: "auto 100%",
-            opacity: "70%",
+            opacity: "100%",
             zIndex: -1,
 
         }}
@@ -22,7 +22,7 @@ function MovingBackground() {
         options={{
         background: {
             color: {
-            value: "#26a7c7",
+            value: "#1f1f1f",
             },
         },
         fpsLimit: 60,
